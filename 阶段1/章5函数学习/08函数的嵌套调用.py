@@ -31,3 +31,21 @@ def demo():
     print(num)  # 可以访问全局变量num
 print(num)  # 可以访问全局变量num
 demo() 
+
+
+#在函数内修改全局变量
+
+def test_b():
+    num = 300 # 这里的num是局部变量
+    print(num)
+
+test_b()  # 300
+print(num)  # 100
+
+def test_c():
+    global num  # 声明使用全局变量num
+    num = 200  # 修改全局变量num的值
+    print(num)
+
+test_c()  # 200
+print(num)  # 200
