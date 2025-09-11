@@ -13,6 +13,12 @@ class Clock:
     def __str__(self):
         return f"我是一个时钟，我的id是{self.id},我的价格是{self.price},我的品牌是{self.brand}"
     
+    def __lt__(self, other):
+        return self.price<other.price
+    
+    def __le__(self, other):
+        return self.price<=other.price
+    
 c1=Clock(1,100,"中国")
 print(c1)
 print(str(c1))
@@ -20,12 +26,16 @@ print(str(c1))
 
 class test:
     def __init__(self):
-       return "test"
+       print("test")
 
-t=test()
-print(t)
+test()
 
 
 # __it__数字比较方法
+c2=Clock(2,200,"中国")
+print(c1<c2)
 
-cl
+# __le__小于等于比较方法
+print(c1<=c2)
+
+# __eq__等于比较方法 以下不再赘述
